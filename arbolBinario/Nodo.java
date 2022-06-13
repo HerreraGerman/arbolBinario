@@ -1,26 +1,39 @@
 package arbolBinario;
 
 public class Nodo{
-    protected Object dato;
-    protected Nodo izdo;
-    protected Nodo dcho;
-    
-    public Nodo(Object dato){
-        this.dato = dato;
-        izdo = dcho = null;
-    }
-    
-    public Nodo(Nodo ramaIzdo, Object dato, Nodo ramaDcho){
-        this.dato = dato;
-        izdo = ramaIzdo;
-        dcho = ramaDcho;
+    protected Object tipoObjeto;
+    protected Nodo izquierdo;
+    protected Nodo derecho;
+
+    public Nodo(Object tipoObjeto){
+        this.tipoObjeto = tipoObjeto;
+        izquierdo = derecho = null;
     }
 
-    // Operaciones de acceso
-    public Object valorNodo(){ return dato; }
-    public Nodo subarbolIzdo(){ return izdo; }
-    public Nodo subarbolDcho(){ return dcho; }
-    public void nuevoValor(Object d){ dato = d; }
-    public void ramaIzdo(Nodo n){ izdo = n; }
-    public void ramaDcho(Nodo n){ dcho = n; }
+    public Nodo(Nodo ramaIzquierda, Object tipoObjeto, Nodo ramaDerecha){
+        this.tipoObjeto = tipoObjeto;
+        this.izquierdo = ramaIzquierda;
+        this.derecho = ramaDerecha;
+    }
+
+    public Nodo getIzquierdo() {
+        return this.izquierdo;
+    }
+
+    public void setIzquierdo(Nodo izquierdo) {
+        this.izquierdo = izquierdo;
+    }
+
+    public Nodo getDerecho() {
+        return this.derecho;
+    }
+
+    public void setDerecho(Nodo derecho) {
+        this.derecho = derecho;
+    }
+
+    public void visitar(){        
+        System.out.println(tipoObjeto.toString());
+    }
+
 }

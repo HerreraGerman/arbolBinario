@@ -2,7 +2,7 @@ package arbolBinario;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         ArbolBinario arbol;
         Nodo a1, a2, a;
@@ -24,6 +24,28 @@ public class Main {
         a1 = (Nodo) pila.quitar();
         a = ArbolBinario.nuevoArbol(a1, new Auto("Volkswagen", "Gol G3", 2005),a2);
         arbol = new ArbolBinario(a);
+
+        //Recorrido en preorden
+        System.out.println("");
+        System.out.println("Recorrido en preorden:");
+        System.out.println("");
+
+        ArbolBinario.preorden(a);
+
+        //Recorrido en orden
+        System.out.println("");
+        System.out.println("Recorrido en orden:");
+        System.out.println("");
+
+        ArbolBinario.inorden(a);
+
+        //Recorrido en posorden
+        System.out.println("");
+        System.out.println("Recorrido en posorden:");
+        System.out.println("");
+
+        ArbolBinario.postorden(a);
+
     }
     
 }
